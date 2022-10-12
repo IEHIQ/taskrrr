@@ -1,0 +1,68 @@
+@import '../../colors'
+
+.task
+    display: flex
+    flex-direction: row
+    gap: 2vmin
+    padding: 2vmin
+
+    position: relative
+    border-radius: 3vmin
+
+    background-color: $violet-color-10
+
+    align-items: center
+
+    transition: color .5s ease-in-out
+    transition: background-color .5s ease-in-out
+
+    &:hover
+        cursor: pointer
+
+    &.done
+        filter: grayscale(1)
+        .title, .desc
+            text-decoration: line-through
+
+    &.marking
+        background-color: $green-color
+
+    &.deleting
+        background-color: $red-color
+
+    .icon
+        height: 10vmin
+        aspect-ratio: 1 / 1
+
+        align-self: flex-start
+
+        background-color: $violet-color-10
+        border-radius: 2vmin
+
+        font-size: 5vmin
+
+        padding-top: 0.06em
+
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .text
+        color: $violet-color-dark
+        font-family: 'Manrope'
+        font-weight: bold
+
+        .title
+            font-size: 3vmin
+
+        .desc
+            font-size: 2.5vmin
+            opacity: 75%
+
+.returning
+    animation: return .5s ease-in-out 0s 1 normal forwards
+
+@keyframes return        
+    100%
+        left: 0
+        
